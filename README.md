@@ -6,7 +6,7 @@ Each file represents an instance, do it by order:
    
 3) iot_sensor:
    1) Contains bash steps on configuring the instance
-   2) Contains a 'aircon_light.py'python script to send data over to historianDB (make sure to read the code and understand)
+   2) Contains a 'aircon_light.py' python script to send data over to historianDB (make sure to read the code and understand)
        
 4) historianDB:
    1) Contains the database schema, initiate it on the web server
