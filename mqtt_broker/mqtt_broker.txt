@@ -10,7 +10,7 @@ mosquitto_passwd -U password
 
 cat password
 
-vim default.conf
+vim default.conf (from line 15 to 27 paste the command into the default.conf file)
 
 listener 1883
 
