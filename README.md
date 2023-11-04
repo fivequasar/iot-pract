@@ -13,3 +13,4 @@ Each file represents an instance, do it by order:
    2) Contains a 'receiver.py' python script to receive data from iot_sensor (make sure to read the code and understand).
  
       
+* Also note that everytime you shutdown and startup an instance the public IP address WILL change, that means going to both pythong files ( 'aircon_light.py' and 'receiver.py' )
