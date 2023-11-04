@@ -2,7 +2,7 @@ apt-get update
 
 apt-get install mosquitto mosquitto-clients -y 
 
-apt install python3-pip -y
+apt install python3-pip -y (after installation just click "Cancel", you'll see what I mean.)
 
 pip install dweepy
 
