@@ -8,3 +8,7 @@ pip3 install paho-mqtt
 
 vim receiver.py //Port over the contents of the receiver.py file to here
 
+chmod +x receiver.py
+
+./receiver.py
+
