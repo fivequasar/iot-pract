@@ -20,6 +20,6 @@ Each file represents an instance, do it by order:
    * Also note that everytime you shutdown and startup an instance the public IP address WILL change, that means going to both python files ( 'aircon_light.py' and 'receiver.py' ) and change the IP addresses for the broker's ip.
    
 * In your IFTT application, there should be two button widgets to control both the aircon and the lights, refer to 'aircon_light.py' to see the URL.
-* Result: If all is working correctly, make sure that the aircon_light.py is running on the iot_sensor instance, run the mosquitto service with the default.conf running on the mqtt_broker instance and the receiver.py is running on the historian_db instance. Once all is running try and to click on your IFTT widget, and look at the receiver.py output on historian_db instance, it should show something like: 2023.04.11-15:59:12 aircon Off Temp=0
+* Result: If all is working correctly, make sure that the aircon_light.py is running on the iot_sensor instance, run the mosquitto service with the default.conf running on the mqtt_broker instance and the receiver.py is running on the historian_db instance. Once all is running, click on your IFTT widget for either devices, and look at the receiver.py output on historian_db instance, it should show something like: 2023.04.11-15:59:12 aircon Off Temp=0
 
 
