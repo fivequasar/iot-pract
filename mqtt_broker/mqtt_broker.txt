@@ -12,7 +12,7 @@ cat password
 
 vim default.conf
 
-*** listener 1883 ***
+listener 1883
 
 allow_anonymous false
 
