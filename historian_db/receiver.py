@@ -2,9 +2,8 @@
 
 import paho.mqtt.client as mqtt
 
-# PLEASE REFER TO LINE 81 and 82 *IMPORTANT*
-# currently the sql connectors are all commented out, this is for convenience sake when you are doing the mysql, i assure you that it works if the request is sent from the iot_sensor, it will 
-# change the data if the given schema is used. 
+# PLEASE REFER TO LINE 80 and 81 *IMPORTANT*
+# currently the sql commands are all commented out, this is for convenience sake when you are doing the mysql, i assure you that it works if the request is sent from the iot_sensor, it will change the data if the given schema is used on the web server. 
 
 # import mysql.connector;
 
