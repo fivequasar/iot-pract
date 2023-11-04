@@ -11,8 +11,13 @@ Each file represents an instance, do it by order:
 4) historianDB:
    1) Contains the database schema, initiate it on the web server
    2) Contains a 'receiver.py' python script to receive data from iot_sensor (make sure to read the code and understand).
- 
+
+* While Creating all three instances, make sure that:
+* OS: ubuntu, use the default AMI they provide.
+* Instance Type: t2.micro
+* Firewall (security groups): Enable: SSH, HTTP, HTTPS and MQTT (Port 1883) for all machines temporarily.
       
 * Also note that everytime you shutdown and startup an instance the public IP address WILL change, that means going to both python files ( 'aircon_light.py' and 'receiver.py' ) and change the IP addresses for the broker's ip.
 * In your IFTT application, there should be two button widgets to control both the aircon and the lights, refer to 'aircon_light.py' to see the URL.
-* IMPORTANT, ALL INSTANCE ARE RUNNING UBUNTU, DO NOT USE AMAZON LINUX 2
+
+
