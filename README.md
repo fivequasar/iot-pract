@@ -1,5 +1,5 @@
-# iot-pract
-* READ THE ENTIRE THING *
+# iot-pract (READ THE ENTIRE THING, before starting)
+
 Each file represents an instance, do it by order:
 1) mqtt_broker (authentication configured, TLS NOT configured):
    1) Contains bash steps to setup MQTT ONLY with authentication and loggin enabled.
