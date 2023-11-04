@@ -2,7 +2,7 @@ apt-get update
 
 apt-get install mosquitto mosquitto-clients -y 
 
-cd /etc/mosquitto/cond.d/
+cd /etc/mosquitto/conf.d/
 
 echo 4640D_user:4640D_password > password
 
