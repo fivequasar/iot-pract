@@ -13,4 +13,5 @@ Each file represents an instance, do it by order:
    2) Contains a 'receiver.py' python script to receive data from iot_sensor (make sure to read the code and understand).
  
       
-* Also note that everytime you shutdown and startup an instance the public IP address WILL change, that means going to both python files ( 'aircon_light.py' and 'receiver.py' ) and change the IP addresses for the broker's ip. 
+* Also note that everytime you shutdown and startup an instance the public IP address WILL change, that means going to both python files ( 'aircon_light.py' and 'receiver.py' ) and change the IP addresses for the broker's ip.
+* In your IFTT application, there should be two button widgets to control both the aircon and the lights, refer to 'aircon_light.py' to see the URL. 
