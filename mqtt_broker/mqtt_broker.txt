@@ -26,6 +26,8 @@ persistence_location /var/lib/mosquitto/
 
 log_dest file /var/log/mosquitto/mosquitto.log
 
+systemctl restart mosquitto.service (error is expected for some reason....)
+
 mosquitto -v -c default.conf
 
 IF YOU CANNOT RUN THE CONF, IT CAN BE DEBUGGED IN DIFFERENT WAYS:
