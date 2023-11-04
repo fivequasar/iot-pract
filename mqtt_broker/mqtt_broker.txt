@@ -29,7 +29,3 @@ vim default.conf
 
 mosquitto -v -c default.conf
 
-mosquitto_sub -h insert_instance_public_ip_here -t brokerchannel
-
-mosquitto_pub -h insert_instance_public_ip_here -t brokerchannel "Hello World"
-
