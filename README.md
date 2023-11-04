@@ -2,15 +2,16 @@
 
 Each file represents an instance, do it by order:
 1) mqtt_broker (authentication configured, TLS NOT configured):
-   1) Contains bash steps to setup MQTT ONLY with authentication and loggin enabled.
+   1) Contains bash steps to setup MQTT ONLY with authentication and logging enabled.
    
 3) iot_sensor:
    1) Contains bash steps on configuring the instance
    2) Contains a 'aircon_light.py' python script to send data over to historianDB (make sure to read the code and understand)
        
 4) historianDB:
-   1) Contains the database schema, initiate it on the web server
-   2) Contains a 'receiver.py' python script to receive data from iot_sensor (make sure to read the code and understand).
+   1) Contains bash steps on configuring the instance
+   2) Contains the database schema, initiate it on the web server
+   3) Contains a 'receiver.py' python script to receive data from iot_sensor (make sure to read the code and understand).
 
 * While Creating all three instances, make sure that:
    1) OS: ubuntu, use the default AMI they provide.
