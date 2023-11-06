@@ -31,3 +31,6 @@ sudo kill <PID>
 
 2) restart the service (error is to be expected)
 systemctl restart mosquitto.service
+
+3) https://github.com/eclipse/mosquitto/issues/1603
+refer to this thanks
