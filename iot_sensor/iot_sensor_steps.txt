@@ -6,6 +6,10 @@ apt install python3-pip -y (after installation just click "Cancel", you'll see w
 
 pip install dweepy
 
+git clone https://github.com/fivequasar/iot-pract
+
+#move the folder accordingly
+
 vim aircon_light.py
 
 //port over the aircon_light.py file over and change the host, username and password.
