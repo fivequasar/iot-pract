@@ -17,6 +17,7 @@ Each file represents an instance, do it by order:
    1) OS: ubuntu, use the default AMI they provide.
    2) Instance Type: t2.micro
    3) Firewall (security groups): Enable: SSH, HTTP, HTTPS and MQTT (Port 1883) for all machines temporarily.
+   * Note for the creation of security group please specify CUSTOM TCP and port 1883 FOR MQTT!
    * Also note that everytime you shutdown and startup an instance the public IP address WILL change, that means going to both python files ( 'aircon_light.py' and 'receiver.py' ) and change the IP addresses for the broker's ip.
    4) Use default VPC
    
