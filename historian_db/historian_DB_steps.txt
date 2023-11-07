@@ -6,6 +6,8 @@ apt install python3-pip -y (after installation just click "Cancel", you'll see w
 
 pip3 install paho-mqtt
 
+pip install python-dotenv
+
 pip install mysql-connector-python
 
 vim receiver.py //Port over the contents of the receiver.py file to here
