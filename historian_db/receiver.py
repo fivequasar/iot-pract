@@ -8,13 +8,19 @@ import paho.mqtt.client as mqtt
 import mysql.connector;
 import os
 from flask import Flask, request, redirect
+from dotenv import load_dotenv
+load_dotenv()  # take environment variables from .env.
 
+aws_host = os.getenv('host')
+aws_user = os.getenv('user')
+aws_pass = os.getenv('password')
 
 mydb = mysql.connector.connect(
-    host="iot-project-db.cghvznng7oe0.us-east-1.rds.amazonaws.com", #RDS's DNS address
-    user="admin",
-    password="iot-project-password"
+    host=aws_host, #RDS's DNS address
+    user=aws_user,
+    password=aws_pass
 )
+
 
 #flask app
 app = Flask(__name__)
