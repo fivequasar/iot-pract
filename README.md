@@ -16,10 +16,11 @@ Each file represents an instance, do it by order:
 * While Creating all three instances, make sure that:
    1) OS: ubuntu, use the default AMI they provide.
    2) Instance Type: t2.micro
-   3) Firewall (security groups): Enable: SSH, HTTP, HTTPS and MQTT (Port 1883) for all machines temporarily.
+   3) Firewall (security groups): Enable: SSH, HTTP, HTTPS, MQTT (Port 1883), ICMPv4, 3306 (MYSQL/Aurora) for all machines temporarily.
    * Note for the creation of security group please specify CUSTOM TCP and port 1883 FOR MQTT!
    * Also note that everytime you shutdown and startup an instance the public IP address WILL change, that means going to both python files ( 'aircon_light.py' and 'receiver.py' ) and change the IP addresses for the broker's ip.
    4) Use default VPC
+   5) Creation of RDS (MYSQL) https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerDB.CreateDBInstance.html
    
 * In your IFTT application, there should be two button widgets to control both the aircon and the lights, refer to 'aircon_light.py' to see the URL.
 * Result: If all is working correctly, make sure that the aircon_light.py is running on the iot_sensor instance, run the mosquitto service with the default.conf running on the mqtt_broker instance and the receiver.py is running on the historian_db instance. Once all is running, click on your IFTT widget for either devices, and look at the receiver.py output on historian_db instance, it should show something like: 2023.04.11-15:59:12 aircon Off Temp=0
