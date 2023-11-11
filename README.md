@@ -19,7 +19,7 @@ Each file represents an instance, do it by order:
    3) Firewall (security groups): Enable: SSH, HTTP, HTTPS, MQTT (Port 1883), ICMPv4, 3306 (MYSQL/Aurora) for all machines temporarily.
    * Note for the creation of security group please specify CUSTOM TCP and port 1883 FOR MQTT!
    * Also note that everytime you shutdown and startup an instance the public IP address WILL change, that means going to both python files ( 'aircon_light.py' and 'receiver.py' ) and change the IP addresses for the broker's ip.
-   4) Use default VPC
+   4) Use default VPC (This is temporary as it is advised not to use the default VPC) 
    5) Creation of RDS (MYSQL) https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerDB.CreateDBInstance.html
    
 * In your IFTT application, there should be two button widgets to control both the aircon and the lights, refer to 'aircon_light.py' to see the URL.
