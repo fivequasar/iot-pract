@@ -14,7 +14,7 @@ Each file represents an instance, do it by order:
    3) pip install python-dotenv
    4) cp the historiandb folder into /home/ubuntu
    5) touch .env in the historndb folder
-   6) put in your details like my example
+   6) put in your details like my example in .env_sample
    7) Contains the database schema, initiate it on the web server
       
 * While Creating all three instances, make sure that:
