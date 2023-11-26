@@ -11,7 +11,11 @@ Each file represents an instance, do it by order:
 4) historianDB:
    1) Contains bash steps on configuring the instance
    2) Contains a 'receiver.py' python script to receive data from iot_sensor (make sure to read the code and understand).
-   3) Contains the database schema, initiate it on the web server
+   3) pip install python-dotenv
+   4) cp the historiandb folder into /home/ubuntu
+   5) touch .env in the historndb folder
+   6) put in your details like my example
+   7) Contains the database schema, initiate it on the web server
       
 * While Creating all three instances, make sure that:
    1) OS: ubuntu, use the default AMI they provide.
