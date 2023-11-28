@@ -3,13 +3,20 @@
 import dweepy
 import time
 import os
-
+import random
+from paho.mqtt import client as mqtt_client
 
 link_air = "4640D_air_con_sensor"; # ensure that when you use IFTT, https://dweet.io/dweet/for/4640D_air_con_sensor?status=onoff is the url for your web hook application
 
 link_light = "4640D_light_sensor"; # ensure that when you use IFTT, https://dweet.io/dweet/for/4640D_light_sensor?status=onoff is the url for your web hook application
 
-host = "54.169.180.83"; # broker's ip
+host = "13.212.222.212"; # broker's ip
+
+port = 1883
+
+topic = "brokerchannel"
+
+client_id = f'publish-{random.randint(0, 1000)}'
 
 mqtt_username = "4640D_user"; # mqtt user that was created on mqtt_server.
 
@@ -84,17 +91,24 @@ while True:
         currentAirTimeStamp = latestDweetTimeStampAir
         
         if query_air_state == "off": 
-            #print("Received new dweet on", latestDweetAir[0]['created']);
-            print("Air-conditioner is on!");
-            print("Brightness is at " + query_air_read_num_to_string);
-            os.system("mosquitto_pub -d -h " + host + " -u " + mqtt_username + " -P " + mqtt_password + " -t brokerchannel -m '" + latestDweetTimeStampAir + "_aircon_on" + query_air_read_num_to_string + "';");
+
+            client = mqtt_client.Client(client_id)
+            client.username_pw_set(mqtt_username, mqtt_password)
+            client.connect(host, port)
+            msg = latestDweetTimeStampAir + "_aircon_on" + query_air_read_num_to_string
+            result = client.publish(topic, msg)
+            print(msg)
             query_air_state = "on"
 
         
         elif query_air_state == "on":
-            #print("Received new dweet on", latestDweetAir[0]['created']);
-            print("Air-conditioner is off!");
-            os.system("mosquitto_pub -d -h " + host + " -u " + mqtt_username + " -P " + mqtt_password + " -t brokerchannel -m '" + latestDweetTimeStampAir + "_aircon_of0';");
+
+            client = mqtt_client.Client(client_id)
+            client.username_pw_set(mqtt_username, mqtt_password)
+            client.connect(host, port)
+            msg = latestDweetTimeStampAir + "_aircon_of0"
+            result = client.publish(topic, msg)
+            print(msg)
             query_air_state = "off"
             
     time.sleep(1) 
@@ -104,19 +118,24 @@ while True:
         currentLightTimeStamp = latestDweetTimeStampLight
         
         if query_light_state == "off": 
-            #print("Received new dweet on", latestDweetLight[0]['created']);
-            print("Light is on!");
-            print("Brightness is at " + query_light_bright_num_to_string);
-            os.system("mosquitto_pub -d -h " + host + " -u " + mqtt_username + " -P " + mqtt_password + " -t brokerchannel -m '" + latestDweetTimeStampLight + "_lights_on" + query_light_bright_num_to_string +"';");
+            
+            client = mqtt_client.Client(client_id)
+            client.username_pw_set(mqtt_username, mqtt_password)
+            client.connect(host, port)
+            msg = latestDweetTimeStampLight + "_lights_on" + query_light_bright_num_to_string
+            result = client.publish(topic, msg)
+            print(msg)
             query_light_state = "on"
             
-
         
         elif query_light_state == "on":
-            #print("Received new dweet on", latestDweetLight[0]['created']);
-            print("Light is off!");
-            os.system("mosquitto_pub -d -h " + host + " -u " + mqtt_username + " -P " + mqtt_password + " -t brokerchannel -m '" + latestDweetTimeStampLight + "_lights_of0';");
+            
+            client = mqtt_client.Client(client_id)
+            client.username_pw_set(mqtt_username, mqtt_password)
+            client.connect(host, port)
+            msg = latestDweetTimeStampLight + "_lights_of0"
+            result = client.publish(topic, msg)
+            print(msg)
             query_light_state = "off"
             
-        
     time.sleep(1)
