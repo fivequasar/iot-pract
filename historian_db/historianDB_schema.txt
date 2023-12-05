@@ -12,8 +12,7 @@ CREATE TABLE iot_devices (
     reading varchar(15)
 );
 
-INSERT INTO iot_devices  (no, time_stamp , device, status, reading) 
-VALUES (1, '0000.00.00-00:00:00', 'Air-Con', 'Off', 'Temp=0');
+INSERT INTO iot_devices  (no, time_stamp , device, status, reading) VALUES (1, '0000.00.00-00:00:00', 'Air-Con', 'Off', 'Temp=0');
 
 INSERT INTO iot_devices  (no, time_stamp , device, status, reading) VALUES (2, '0000.00.00-00:00:00', 'Light', 'Off', 'Brightness=0');
 
