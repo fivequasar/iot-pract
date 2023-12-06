@@ -12,6 +12,8 @@ pip install mysql-connector-python
 
 pip install Flask
 
+pip install waitress 
+
 vim receiver.py //Port over the contents of the receiver.py file to here
 
 chmod +x receiver.py
