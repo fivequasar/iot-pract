@@ -8,17 +8,22 @@ import paho.mqtt.client as mqtt
 import mysql.connector;
 import os
 from flask import Flask, request, redirect
-from dotenv import load_dotenv
-load_dotenv()  # take environment variables from .env.
+from waitress import serve
 
-aws_host = os.getenv('host')
-aws_user = os.getenv('user')
-aws_pass = os.getenv('password')
+import logging
+logger = logging.getLogger('waitress')
+logger.setLevel(logging.INFO)
+#from dotenv import load_dotenv
+#load_dotenv()  # take environment variables from .env.
+
+#aws_host = os.getenv('host')
+#aws_user = os.getenv('user')
+#aws_pass = os.getenv('password')
 
 mydb = mysql.connector.connect(
-    host=aws_host, #RDS's DNS address
-    user=aws_user,
-    password=aws_pass
+    host="iot-project-db.cghvznng7oe0.us-east-1.rds.amazonaws.com", #RDS's DNS address
+    user="admin",
+    password="iot-project-password"
 )
 
 
@@ -94,7 +99,8 @@ def default():
         Show list of comments with form to submit comments
         """
         cursor = mydb.cursor()
-        cursor.execute('''SELECT * FROM historianDB.iot_devices''')
+        query = ("""SELECT * FROM historianDB.iot_devices """)
+        cursor.execute(query)
         comments = cursor.fetchall()
         #mydb.close()
         completeTable="<tr>"
@@ -123,7 +129,7 @@ def default():
         </html>
         """ %(completeTable)
     except:
-        return redirect("https://http.cat/[404")
+        return redirect("https://http.cat/404")
 
     
 #flask serve
@@ -132,8 +138,7 @@ if __name__ == "__main__":
     client.on_connect = on_connect
     client.on_message = on_message
     client.username_pw_set("4640D_user", "4640D_password") # mqtt user and password that was created on mqtt_server.
-    client.connect("100.24.14.37", 1883); # broker's IP address.
+    client.connect("54.198.158.247", 1883); # broker's IP address.
     client.loop_start()
-
-    app.run(host='0.0.0.0',port=80,debug=False, use_reloader=False, use_evalex=False)
-
+    serve(app,host="0.0.0.0",port=80) #production server for flask
+    #app.run(host='0.0.0.0',port=80,debug=False, use_reloader=False, use_evalex=False)
