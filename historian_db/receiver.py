@@ -2,9 +2,6 @@
 
 import paho.mqtt.client as mqtt
 
-# PLEASE REFER TO LINE 80 and 81 *IMPORTANT*
-# currently the sql commands are all commented out, this is for convenience sake when you are doing the mysql, i assure you that it works if the request is sent from the iot_sensor, it will change the data if the given schema is used on the web server. 
-
 import mysql.connector;
 import os
 from flask import Flask, request, redirect
@@ -94,9 +91,6 @@ def on_message(client, userdata, msg):
 @app.route("/")
 def default():
     try:
-        """
-        Show list of comments with form to submit comments
-        """
         cursor = mydb.cursor()
         query = ("""SELECT * FROM historianDB.iot_devices """)
         cursor.execute(query)
@@ -140,5 +134,4 @@ if __name__ == "__main__":
     client.connect("52.55.136.167", 1883); # broker's IP address.
     client.loop_start()
     #serve(app,host="0.0.0.0",port=443)
-    #app.run(ssl_context=("cert.pem", "key.pem"))
     app.run(host='0.0.0.0',port=443,debug=False,ssl_context=dna)
