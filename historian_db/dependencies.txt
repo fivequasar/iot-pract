@@ -1,0 +1,3 @@
+paho-mqtt
+mysql-connector-python
+Flask
