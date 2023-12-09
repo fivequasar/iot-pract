@@ -9,17 +9,14 @@ import ssl
 dna = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
 dna.load_cert_chain('cert.pem', 'key.pem')
 
-#from dotenv import load_dotenv
-#load_dotenv()  # take environment variables from .env.
-
-#aws_host = os.getenv('host')
-#aws_user = os.getenv('user')
-#aws_pass = os.getenv('password')
+db_host = os.getenv('host')
+db_user = os.getenv('user')
+db_pass = os.getenv('password')
 
 mydb = mysql.connector.connect(
-    host="iot-project-db.cghvznng7oe0.us-east-1.rds.amazonaws.com", #RDS's DNS address
-    user="admin",
-    password="iot-project-password"
+    host=db_host, #RDS's DNS address
+    user=db_user,
+    password=db_pass
 )
 
 
