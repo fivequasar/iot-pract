@@ -131,7 +131,8 @@ if __name__ == "__main__":
     client.on_connect = on_connect
     client.on_message = on_message
     client.username_pw_set("4640D_user", "4640D_password") # mqtt user and password that was created on mqtt_server.
-    client.connect("52.55.136.167", 1883); # broker's IP address.
+    client.connect("44.221.118.197", 1883); # broker's IP address.
     client.loop_start()
     #serve(app,host="0.0.0.0",port=443)
+    #app.run(ssl_context=("cert.pem", "key.pem"))
     app.run(host='0.0.0.0',port=443,debug=False,ssl_context=dna)
